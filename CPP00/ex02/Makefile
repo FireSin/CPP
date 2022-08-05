@@ -1,7 +1,7 @@
 NAME = test
 CC = c++
 
-CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 OBJDIR = ./objs
 VPATH = .
