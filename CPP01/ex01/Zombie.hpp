@@ -10,8 +10,7 @@ private:
 	std::string	name;
 public:
 	void	announce();
-	Zombie*	newZombie(std::string name);
-	void	randomChump(std::string name);
+	Zombie*	zombieHorde( int N, std::string name );
 
 	Zombie( void );
 	~Zombie( void );
