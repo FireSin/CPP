@@ -1,4 +1,4 @@
-NAME = harlFilter
+NAME = fixed
 CC = c++
 
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
