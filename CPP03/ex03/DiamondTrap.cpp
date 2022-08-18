@@ -9,6 +9,18 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_trap"), FragT
 	this->damage = FragTrap::damage;
 }
 
+DiamondTrap::DiamondTrap(const DiamondTrap& other): ClapTrap(other.name + "_clap_trap"), FragTrap(other.name), ScavTrap(other.name){
+	*this = other;
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other){
+	this->name = other.name;
+	this->damage = other.damage;
+	this->energyPoints = other.energyPoints;
+	this->hitPoints = other.hitPoints;
+	return *this;
+}
+
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap destructor" << std::endl;

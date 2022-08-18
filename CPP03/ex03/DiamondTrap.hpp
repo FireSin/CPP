@@ -13,6 +13,8 @@ public:
 	using ScavTrap::attack;
 
 	DiamondTrap(std::string name);
+	DiamondTrap(const DiamondTrap& other);
+	DiamondTrap& operator=(const DiamondTrap& other);
 	~DiamondTrap();
 };
 

@@ -1,10 +1,9 @@
 #include "DiamondTrap.hpp"
 
 int main(){
-	DiamondTrap a("test");
+	DiamondTrap a("Diamond");
 	a.whoAmI();
-	std::cout << a.getEnergyPoints() << std::endl;
-	std::cout << a.getHitPoints() << std::endl;
 	a.attack("asd");
+	a.beRepaired(0);
 	return 0;
 }

@@ -24,26 +24,6 @@ ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-void ClapTrap::setHitPoints(int hp){
-	this->hitPoints = hp;
-}
-
-void ClapTrap::setEnergyPoints(int ep){
-	this->energyPoints = ep;
-}
-
-void ClapTrap::setDamage(int dmg){
-	this->damage = dmg;
-}
-
-int ClapTrap::getHitPoints(){
-	return this->hitPoints;
-}
-
-int ClapTrap::getEnergyPoints(){
-	return this->energyPoints;
-}
-
 void ClapTrap::attack(const std::string& target){
 	if (this->energyPoints > 0 && this->hitPoints > 0){
 		std::cout << "ClapTrap " << this->name << " attacks " << target << " causing " << this->damage << " points of damage!" << std::endl;
