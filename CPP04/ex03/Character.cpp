@@ -8,6 +8,17 @@ Character::~Character()
 {
 }
 
+Character::Character(const Character& other){
+	*this = other;
+}
+
+Character& Character::operator=(const Character& other){
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = other._inventory[i];
+	this->_name = other._name;	
+	return *this;
+}
+
 std::string const &Character::getName() const{
 	return this->_name;
 }

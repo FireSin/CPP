@@ -13,6 +13,16 @@ MateriaSource::~MateriaSource(){
 	}
 }
 
+MateriaSource::MateriaSource(const MateriaSource& other){
+	*this = other;
+}
+
+MateriaSource& MateriaSource::operator=(const MateriaSource& other){
+	for (int i = 0; i < 4; i++)
+		this->_mat[i] = other._mat[i];
+	return *this;
+}
+
 void MateriaSource::learnMateria(AMateria* nMat){
 	for (int i = 0; i < 4; i++)
 	{

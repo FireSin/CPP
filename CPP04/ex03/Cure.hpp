@@ -9,6 +9,9 @@ public:
 	void use(ICharacter& target);
 	AMateria* clone() const;
 
+	Cure(const Cure& other);
+	Cure& operator=(const Cure& other);
+
 	Cure();
 	~Cure();
 };

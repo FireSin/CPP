@@ -7,6 +7,15 @@ AMateria::AMateria(std::string const &type){
 AMateria::~AMateria(){
 }
 
+AMateria::AMateria(const AMateria& other){
+	*this = other;
+}
+
+AMateria& AMateria::operator=(const AMateria& other){
+	this->_type = other._type;
+	return *this;
+}
+
 std::string const &AMateria::getType() const{
 	return this->_type;
 }

@@ -9,6 +9,9 @@ public:
 	void use(ICharacter& target);
 	AMateria* clone() const;
 
+	Ice(const Ice& other);
+	Ice& operator=(const Ice& other);
+
 	Ice();
 	~Ice();
 };
