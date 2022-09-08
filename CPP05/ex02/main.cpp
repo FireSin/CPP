@@ -1,21 +1,14 @@
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(){
-	try
-	{
-		Form af("a38", 100, 50);
-		std::cout << af;
-		// Form bf("b38", -100, 50);
-		// std::cout << bf;
-		Bureaucrat a("Asa", 150);
-		Bureaucrat b("Alla", 10);
-		af.signForm(b);		
-		af.signForm(a);
-	}
-	catch(std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
+	Form* a = new ShrubberyCreationForm("A28");
+	// Form* a2 = new RobotomyRequestForm("A228");
+	Bureaucrat b("Asa", 5);
+	b.signForm(*a);
+	b.executeForm(*a);
+	delete a;
+	// delete a2;
 	return 0;
 }

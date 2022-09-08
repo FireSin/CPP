@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name){
@@ -32,14 +33,17 @@ void	Bureaucrat::gradeDown(){
 	this->_grade++;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other){
-	*this = other;
-}
-
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other){
-	this->_grade = other._grade;
-	(std::string)this->_name = (std::string)other._name;
-	return *this;
+void	Bureaucrat::signForm(Form& frm) const{
+	try
+	{
+		frm.beSigned(*this);
+		std::cout << this->getName() << " signed " << frm.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't sign " << frm.getName() << " because ";
+		std::cout << e.what() << '\n';
+	}
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bur){

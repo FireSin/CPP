@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+class Form;
+
 class Bureaucrat
 {
 private:
@@ -18,15 +20,14 @@ public:
 	void		gradeUp();
 	void		gradeDown();
 
+	void	signForm(Form& frm) const;
+
 	class GradeTooHighException: public std::exception{
 		const char *what() const throw() {return "Grade Too High";};
 	};
 	class GradeTooLowException: public std::exception{
 		const char *what() const throw() {return "Grade Too Low";};
 	};
-
-	Bureaucrat(const Bureaucrat& other);
-	Bureaucrat& operator=(const Bureaucrat& other);
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bur);

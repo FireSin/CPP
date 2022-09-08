@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, int gradeSigned, int gradeExec): _name(name), _gradeSigned(gradeSigned), _gradeExecute(gradeExec)
+Form::Form(std::string name, int gradeSigned, int gradeExec):_name(name), _gradeSigned(gradeSigned), _gradeExecute(gradeExec)
 {
 	if (gradeSigned < 1 || gradeExec < 1)
 		throw GradeTooHighException();
@@ -10,10 +10,6 @@ Form::Form(std::string name, int gradeSigned, int gradeExec): _name(name), _grad
 }
 
 Form::~Form(){
-}
-
-Form::Form(const Form& other): _name(other._name), _gradeSigned(other._gradeSigned), _gradeExecute(other._gradeExecute){
-	this->_signed = other._signed;
 }
 
 std::string	Form::getName() const{
@@ -32,12 +28,12 @@ int	Form::getGradeExecute() const{
 	return this->_gradeExecute;
 }
 
-void Form::signForm(const Bureaucrat& burger){
-	if (burger.getGrade() > this->_gradeSigned){
-		std::cout << burger.getName() << " couldn't sign " << this->_name << " because ";
+void Form::beSigned(const Bureaucrat& burger){
+	if (burger.getGrade() > this->_gradeSigned)
 		throw GradeTooLowException();
-	}
-	std::cout << burger.getName() << " signed " << this->_name << std::endl;
+	if (this->_signed)
+		throw FormIsAlreadySignedException();
+	this->_signed = true;	
 }
 
 std::ostream& operator<<(std::ostream& out, const Form& frm){

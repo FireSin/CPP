@@ -37,5 +37,5 @@ void Form::beSigned(const Bureaucrat& burger){
 }
 
 std::ostream& operator<<(std::ostream& out, const Form& frm){
-	return out << "Name: " << frm.getName() << std::endl << "Signed: " << frm.getSigned() << std::endl << "Grade signed: " << frm.getGradeSigned() << std::endl << "Grade execute: " << frm.getGradeExecute() << std::endl;
+		return out << "Name: " << frm.getName() << std::endl << "Signed: " << frm.getSigned() << std::endl << "Grade signed: " << frm.getGradeSigned() << std::endl << "Grade execute: " << frm.getGradeExecute() << std::endl;
 }

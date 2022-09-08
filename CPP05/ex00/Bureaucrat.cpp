@@ -32,16 +32,6 @@ void	Bureaucrat::gradeDown(){
 	this->_grade++;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other){
-	*this = other;
-}
-
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other){
-	this->_grade = other._grade;
-	(std::string)this->_name = (std::string)other._name;
-	return *this;
-}
-
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bur){
 	return out << bur.getName() << ", bureaucrat grade " << bur.getGrade();
 }
