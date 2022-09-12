@@ -1,4 +1,4 @@
-NAME = firstType
+NAME = thirdType
 CC = c++
 
 CPPFLAGS = -g -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
@@ -9,6 +9,7 @@ VPATH = .
 HEADER = $(wildcard $(addsuffix /*.hpp,$(VPATH)))
 OBJ = $(addprefix $(OBJDIR)/,$(notdir $(SRC:.cpp=.o)))
 SRC = $(wildcard $(addsuffix /*.cpp,$(VPATH)))
+TPP = $(wildcard $(addsuffix /*.tpp,$(VPATH)))
 
 
 all:	$(NAME)
@@ -16,8 +17,8 @@ all:	$(NAME)
 $(OBJDIR)/%.o :	%.cpp $^ $(HEADER)
 	@$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(NAME):	Makefile $(OBJDIR) $(OBJ) 
-	@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJ) 
+$(NAME):	Makefile $(OBJDIR) $(OBJ) $(TPP)
+	@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJ)
 	@echo "$(NAME) compile"
 
 $(OBJDIR):

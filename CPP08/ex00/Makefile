@@ -1,4 +1,4 @@
-NAME = firstType
+NAME = convert
 CC = c++
 
 CPPFLAGS = -g -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
